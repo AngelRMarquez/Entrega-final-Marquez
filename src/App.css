@@ -1,0 +1,75 @@
+
+
+.font-techmac{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 20rem;
+    text-decoration: none;
+    color: black;
+}
+
+.h2{
+    text-align: center;
+}
+
+.contador{
+    text-align: center;
+
+}
+
+.navbar{
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.nav-linkk{
+    color: black;
+    padding: 8px 17px;
+    margin: 15px ;
+    border-radius: 10px;
+    background-color:#8b949b ;;
+    text-decoration: none;
+    width: 100%;
+}
+
+.container-fluidd{
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#b6bfc6 ;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+.btn-outline-successs{
+    --bs-btn-color: #000;
+    --bs-btn-border-color: #b6bfc6 ;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg:#b6bfc6 ;
+    --bs-btn-hover-border-color: #b6bfc6 ;
+    --bs-btn-focus-shadow-rgb: 25, 135, 84;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #b6bfc6;
+    --bs-btn-active-border-color: #b6bfc6 ;;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #b6bfc6 ;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #b6bfc6 ;
+    --bs-gradient: none;
+}
+
+.btnn{
+
+    color: black;
+    padding: 8px 17px;
+    margin: 15px ;
+    border-radius: 10px;
+    background-color:#8b949b ;
+    text-decoration: none; 
+}
+
