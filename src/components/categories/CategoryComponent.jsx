@@ -23,12 +23,11 @@ export default function CategoryComponent() {
     }, [catName]);
 
     const handleAddToCart = (accessoryId) => {
-        // Aquí puedes implementar la lógica para agregar un accesorio al carrito
+
         console.log(`Agregando al carrito el accesorio con ID ${accessoryId}`);
     };
 
     const handleRemoveFromCart = (accessoryId) => {
-        // Aquí puedes implementar la lógica para eliminar un accesorio del carrito
         console.log(`Eliminando del carrito el accesorio con ID ${accessoryId}`);
     };
 

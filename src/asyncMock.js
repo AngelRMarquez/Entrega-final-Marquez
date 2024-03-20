@@ -31,7 +31,7 @@ export const getAccessorie = (id) => {
             } else {
                 reject(new Error(`No se encontró ningún accesorio con ID ${id}.`));
             }
-        }, 200);
+        }, 2000);
     });
 };
 
