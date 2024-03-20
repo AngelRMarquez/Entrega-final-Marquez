@@ -1,17 +1,30 @@
-import './App.css';
+// App.jsx
 import React from 'react';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ProductsComponent from './components/products/ProductsComponent.jsx';
+import HomeComponent from './components/home/HomeComponent';
+import ContactComponent from './components/contact/ContactComponent';
+import NavBar from './components/navigation/NavBar';
+import SingleAccessories from './components/product/SingleAccessories';
+import CategoryComponent from './components/categories/CategoryComponent.jsx';
+// import ItemListContainer from './components/products/ItemListContainer.jsx';
 const App = () => {
-  return (
-    <div className="app">
-      <NavBar />
-      <ItemListContainer greeting="¡Bienvenido a nuestra tienda!" />
-    </div>
-  );
+    return (
+        <div className="app">
+            <BrowserRouter>
+                <NavBar />
+                <Routes>
+                    <Route path="/" element={<HomeComponent />} />    
+                    <Route path="/products" element={<ProductsComponent />} />
+                    <Route path="/product/:accesId" element={<SingleAccessories />} />
+                    <Route path="/category/:catName" element={<CategoryComponent />} />
+                    {/* <Route path="/category/:catName" element={<ItemListContainer />} /> */}
+                    <Route path="/contact" element={<ContactComponent />} />
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 };
 
 export default App;
-
-

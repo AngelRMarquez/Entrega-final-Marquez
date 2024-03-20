@@ -1,47 +1,77 @@
-
-
-.font-techmac{
-    font-size: 2rem;
-    font-weight: bold;
-    margin-right: 20rem;
-    text-decoration: none;
-    color: black;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.h2{
+
+
+.app{
+  background-color:rgb(209, 218, 224) ;
+}
+/* titulo logo */
+.font-techmac {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 20%; /* Ajusta el margen derecho del título "TechMac" */
+  margin-left: 20px; /* Ajusta el margen izquierdo del título "TechMac" */
+  text-decoration: none;
+  color: black;
+}
+/* Estilos para el NavBar */
+.navbar {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 10px; /* Agrega margen en la parte inferior del NavBar */
+}
+
+.navbar img{
+  width: 70px;
+  border-radius: 50px;
+
+}
+
+
+/* Estilos para el CartWidget */
+.cart-widget {
+  margin-right: 30px; /* Ajusta el margen derecho del CartWidget */
+}
+
+
+/* .h2{
     text-align: center;
 }
 
 .contador{
     text-align: center;
 
-}
+} */
 
-.navbar{
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    width: 100%;
-    border-radius: 15px;
-}
 
 .nav-linkk{
-    color: black;
-    padding: 8px 17px;
+    color: rgb(248, 245, 245);
+    padding: 8px 15px;
     margin: 15px ;
     border-radius: 10px;
-    background-color:#8b949b ;;
+    background-color:#767b80 ;;
     text-decoration: none;
     width: 100%;
+}
+.nav-linkk:hover{
+background-color:#6e7174  ;
 }
 
 .container-fluidd{
     display: flex;
     flex-wrap: inherit;
     align-items: center;
-    justify-content: space-between;
-    background-color:#b6bfc6 ;
+    justify-content:space-between;
+    background-color:#dadbdb ;
     text-align: center;
     width: 100%;
+    height: 60px;
 }
 
 
@@ -63,7 +93,7 @@
     --bs-gradient: none;
 }
 
-.btnn{
+/* .btnn{
 
     color: black;
     padding: 8px 17px;
@@ -71,5 +101,203 @@
     border-radius: 10px;
     background-color:#8b949b ;
     text-decoration: none; 
+} */
+
+
+/* App.css */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .card-price {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .card-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #a7aeb6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card-button:hover {
+    background-color: #b5b9bd;
+  }
+  
+/* single accessories */
+  .single-accessory-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px; /* Ajusta el margen superior según sea necesario */
+}
+
+.single-accessory-details {
+    margin-top: 20px; /* Ajusta el margen superior entre el nombre y la imagen según sea necesario */
+}
+
+.single-accessory-image {
+    width: auto; /* Ancho automático */
+    height: 300px; /* Altura fija, ajusta según sea necesario */
+}
+.single-accessory-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 50px; /* Ajusta el margen superior según sea necesario */
+}
+
+.single-accessory-details {
+  margin-top: 20px; /* Ajusta el margen superior entre el nombre y la imagen según sea necesario */
+}
+
+.single-accessory-description {
+  font-size: 16px;
+  margin-top: 10px;
+  width: 80%; /* Limita el ancho del texto al 80% del contenedor */
+  margin-left: auto; /* Centra el texto horizontalmente */
+  margin-right: auto; /* Centra el texto horizontalmente */
+  text-align: center; /* Centra el texto dentro del cuadro */
+  padding: 10px; /* Agrega espacio alrededor del texto para crear un cuadro */
+  border: 1px solid #000; /* Agrega un borde alrededor del cuadro */
+  border-radius: 10px; /* Agrega esquinas redondeadas al cuadro */
+  background:aliceblue;
+}
+
+.single-accessory-category {
+  font-weight: bold;
+  margin-top: 10px; /* Espacio entre la categoría y el precio */
+}
+
+.single-accessory-price {
+  font-size: 18px;
+  color: #000; /* Color del precio, puedes ajustarlo según tu diseño */
+  margin-top: 10px; /* Espacio entre el precio y el siguiente elemento */
+}
+
+/* HomeComponent.css */
+.home-container {
+  text-align: center;
+  position:absolute;
+  background-color:rgb(209, 218, 224) ;
+  width: 100%;
+  height: 100%;
+}
+
+/* homecomponent */
+
+.category-link {
+  display: inline-block; /* Cambiado a inline-block para permitir centrado horizontal */
+  margin-top: 20px;
+  margin-right: 10px; /* Espacio entre los enlaces */
+  padding: 10px 20px; /* Aumento del espacio interno para que los botones sean más grandes */
+  font-size: 18px;
+  text-decoration: none;
+  color: #fff; /* Cambio de color de texto a blanco */
+  background-color: #a7aeb6; /* Cambio de color de fondo */
+  border: 2px solid #b5b9bd; /* Añade un borde para que los botones sean más visibles */
+  border-radius: 5px; /* Añade bordes redondeados */
+  transition: background-color 0.3s, color 0.3s; /* Agrega una transición suave de color */
+}
+
+.category-link:hover {
+  background-color: transparent; /* Cambia el color de fondo en el hover */
+  color: #ffffff; /* Cambia el color del texto en el hover */
+}
+
+/* Estilo adicional para el último botón */
+.category-link:last-child {
+  margin-right: 0; /* Elimina el margen derecho del último botón */
+}
+
+
+.category-container {
+    text-align: center;
+} 
+
+/* CategoryComponent */
+.accessories-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.accessory-item {
+  
+    width: calc(50% - 20px); /* Ancho del 50% de su contenedor menos el espacio entre las tarjetas */
+    margin-bottom: 40px; /* Espacio entre las tarjetas */
+    position: relative;
+    text-align: left;
+    border: 2px solid #6c757d;
+    padding: 20px;
+}
+
+.accessory-item img {
+    width: 100%;
+    max-height: 250px; /* Altura máxima de la imagen */
+    object-fit: contain; /* La imagen mantendrá su relación de aspecto y se ajustará al contenedor */
+    margin-bottom: 20px;
+}
+
+.accessory-details {
+    margin-top: auto; /* Coloca el detalle en la parte inferior del cuadro */
+}
+
+.add-to-cart-btn,
+.remove-from-cart-btn {
+    padding: 10px 20px;
+    background-color: #a7aeb6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px; /* Espacio entre los botones */
+}
+
+.add-to-cart-btn:hover,
+.remove-from-cart-btn:hover {
+    background-color: #b5b9bd; /* Cambia el color de fondo al pasar el mouse sobre el botón */
+  }
+
+  .accessory-buttons {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 20px; /* Espacio superior entre los botones y el contenido */
 }
 
