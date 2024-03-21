@@ -278,7 +278,9 @@ background-color:#6e7174  ;
 .accessory-details {
     margin-top: auto;
 }
-
+.accessory-b{
+  display: flex;
+}
 .add-to-cart-btn,
 .remove-from-cart-btn {
     padding: 10px 20px;
@@ -301,3 +303,9 @@ background-color:#6e7174  ;
     margin-top: 20px; 
 }
 
+.counter{
+  background-color: #6e7174;
+  color: #ccc;
+  padding: 13px 18px;
+  border-radius: 50%;
+}

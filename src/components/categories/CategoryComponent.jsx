@@ -7,6 +7,7 @@ import CartWidget from "../CartWidget";
 export default function CategoryComponent() {
     const { catName } = useParams();
     const [accessories, setAccessories] = useState([]);
+    const [counter, setCounter] = useState(0);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,10 +25,19 @@ export default function CategoryComponent() {
 
     const handleAddToCart = (accessoryId) => {
 
+        setCounter(counter + 1 );
+
         console.log(`Agregando al carrito el accesorio con ID ${accessoryId}`);
     };
 
     const handleRemoveFromCart = (accessoryId) => {
+
+        if(counter > 0){
+            setCounter(counter - 1);
+        }else{
+            console.log('ya esta en el minimo 0');
+        }
+
         console.log(`Eliminando del carrito el accesorio con ID ${accessoryId}`);
     };
 
@@ -43,6 +53,7 @@ export default function CategoryComponent() {
                         <img src={accessory.imagen} alt={accessory.nombre} />
                         <div className="accessory-buttons">
                         <button  className="add-to-cart-btn" onClick={() => handleAddToCart(accessory.id)}>Agregar al carrito</button>
+                        <h4 className="counter">{counter}</h4>
                         <button className="remove-from-cart-btn" onClick={() => handleRemoveFromCart(accessory.id)}>Eliminar del carrito</button>
                     </div>
                     </div>
