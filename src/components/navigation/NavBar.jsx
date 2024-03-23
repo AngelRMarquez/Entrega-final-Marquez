@@ -2,14 +2,17 @@ import React from 'react';
 import CartWidget from '../CartWidget';
 import { Link } from 'react-router-dom';
 
+
 const NavBar = () => {
+
+
     return (
         <>
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluidd">
                 
                     <a className="font-techmac" href="/">
-                    <img src="./img/logo-techmac.jpeg" alt="logo" />TechMac</a>
+                    <img src="./img/techmac-logo.jpeg" alt="logo" />TechMac</a>
                    
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -20,7 +23,13 @@ const NavBar = () => {
                                 <Link className="nav-linkk active" aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-linkk active" aria-current="page" to="/products">Accesorios</Link>
+                                <Link className="nav-linkk active" aria-current="page" to="/category/fundas">Fundas</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-linkk active" aria-current="page" to="/category/auriculares">Auriculares</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-linkk active" aria-current="page" to="/category/cargadores">Cargadores</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-linkk active" aria-current="page" to="/contact">Contacto</Link>

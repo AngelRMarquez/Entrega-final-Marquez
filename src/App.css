@@ -13,7 +13,7 @@
 .font-techmac {
   font-size: 2rem;
   font-weight: bold;
-  margin-right: 20%; 
+  margin-right: 10%; 
   margin-left: 20px; 
   text-decoration: none;
   color: black;
@@ -28,12 +28,14 @@
 }
 
 .navbar img{
-  width: 70px;
+  width: 73px;
   border-radius: 50px;
 
 }
 
-
+ .h2{
+  text-align: center;
+ }
 /* Estilos para el CartWidget */
 .cart-widget {
   margin-right: 30px; 
@@ -53,7 +55,7 @@
 .nav-linkk{
     color: rgb(248, 245, 245);
     padding: 8px 15px;
-    margin: 15px ;
+    margin: 6px ;
     border-radius: 10px;
     background-color:#767b80 ;;
     text-decoration: none;
@@ -259,8 +261,10 @@ background-color:#6e7174  ;
 }
 
 .accessory-item {
-  
-    width: calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: calc(30% - 100px);
     margin-bottom: 40px;
     position: relative;
     text-align: left;
