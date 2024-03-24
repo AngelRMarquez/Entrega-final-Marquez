@@ -6,8 +6,7 @@ import HomeComponent from './components/home/HomeComponent';
 import ContactComponent from './components/contact/ContactComponent';
 import NavBar from './components/navigation/NavBar';
 import SingleAccessories from './components/product/SingleAccessories';
-import CategoryComponent from './components/categories/CategoryComponent.jsx';
-
+import ItemListContainer from './components/products/ItemListContainer';
 const App = () => {
 
     
@@ -19,10 +18,8 @@ const App = () => {
                 <NavBar />
                 <Routes>
                     <Route path="/" element={<HomeComponent />} />    
-                    {/* <Route path="/products" element={<ProductsComponent />} /> */}
                     <Route path="/product/:accesId" element={<SingleAccessories />} />
-                    <Route path="/category/:catName" element={<CategoryComponent />} />
-                    {/* <Route path="/category/:catName" element={<ItemListContainer />} /> */}
+                    <Route path="/products/:catName" element={<ItemListContainer />} />
                     <Route path="/contact" element={<ContactComponent />} />
                 </Routes>
             </BrowserRouter>

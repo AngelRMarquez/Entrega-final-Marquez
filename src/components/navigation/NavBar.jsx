@@ -23,13 +23,13 @@ const NavBar = () => {
                                 <Link className="nav-linkk active" aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-linkk active" aria-current="page" to="/category/fundas">Fundas</Link>
+                                <Link className="nav-linkk active" aria-current="page" to="/products/fundas">Fundas</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-linkk active" aria-current="page" to="/category/auriculares">Auriculares</Link>
+                                <Link className="nav-linkk active" aria-current="page" to="/products/auriculares">Auriculares</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-linkk active" aria-current="page" to="/category/cargadores">Cargadores</Link>
+                                <Link className="nav-linkk active" aria-current="page" to="/products/cargadores">Cargadores</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-linkk active" aria-current="page" to="/contact">Contacto</Link>

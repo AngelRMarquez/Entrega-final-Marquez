@@ -1,28 +1,63 @@
-// import React, { useState } from 'react';
+// itemlistcontainer
 
-// const ItemListContainer = ({ greeting }) => {
-//     const [counter, setCounter] = useState(0);
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getAccessories } from "../../asyncMock";
+import { useNavigate } from 'react-router-dom';
 
-//     const handleIncrement = () => {
-//         setCounter(counter + 1);
-//     };
+// import CartWidget from "../CartWidget";
 
-//     const handleDecrement = () => {
-//         if (counter > 0) {
-//             setCounter(counter - 1);
-//         }
-//     };
+export default function ItemListContainer() {
+    const { catName } = useParams();
+    const [accessories, setAccessories] = useState([]);
+    const navigate = useNavigate();
+    
 
-//     return (
-//         <div className="container mt-3">
-//             <h2 className='h2'>{greeting}</h2>
-//             <div className='contador'>
-//                 <p>Agregar al carrito: {counter}</p>
-//                 <button className="btnn btn-primary" onClick={handleIncrement}>Agregar</button>
-//                 <button className="btnn btn-secondary" onClick={handleDecrement}>Eliminar</button>
-//             </div>
-//         </div>
-//     );
-// };
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const allAccessories = await getAccessories;
+                const accessoriesInCategory = allAccessories.filter(accessory => accessory.categoria === catName);
+                setAccessories(accessoriesInCategory);
+            } catch (error) {
+                console.error('Error al obtener los accesorios:', error);
+            }
+        };
 
-// export default ItemListContainer;
+        fetchData();
+    }, [catName]);
+
+
+
+    useEffect(() => {
+        getAccessories.then((data) => {
+            setAccessories(data);
+        });
+    }, []);
+
+    const handleClick = (id) => {
+        navigate(`/product/${id}`);
+    };
+
+    return (
+        <div>
+            <h2 className="h2">Categoría: {catName}</h2>
+            <div className="accessories-list">
+                {accessories.map(accessory => (
+                    <div key={accessory.id} className="accessory-item">
+                        <img src={accessory.imagen} alt={accessory.nombre} />
+                        <h3>{accessory.nombre}</h3>
+                        <p>Precio: ${accessory.precio}</p>
+                        <div className="accessory-buttons">
+                        <button  className="add-to-cart-btn" onClick={() => handleAddToCart(accessory.id)}>Agregar al carrito</button>
+                        <button className="add-to-cart-btn" onClick={() => handleClick(accessory.id)}>Ver detalles</button>
+                    </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        
+        
+    );
+}
