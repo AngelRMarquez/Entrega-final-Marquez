@@ -1,18 +1,13 @@
-// itemlistcontainer
-
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { getAccessories } from "../../asyncMock";
 import { useNavigate } from 'react-router-dom';
-
-// import CartWidget from "../CartWidget";
 
 export default function ItemListContainer() {
     const { catName } = useParams();
     const [accessories, setAccessories] = useState([]);
     const navigate = useNavigate();
     
-
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -27,14 +22,6 @@ export default function ItemListContainer() {
         fetchData();
     }, [catName]);
 
-
-
-    useEffect(() => {
-        getAccessories.then((data) => {
-            setAccessories(data);
-        });
-    }, []);
-
     const handleClick = (id) => {
         navigate(`/product/${id}`);
     };
@@ -48,16 +35,10 @@ export default function ItemListContainer() {
                         <img src={accessory.imagen} alt={accessory.nombre} />
                         <h3>{accessory.nombre}</h3>
                         <p>Precio: ${accessory.precio}</p>
-                        <div className="accessory-buttons">
-                        <button  className="add-to-cart-btn" onClick={() => handleAddToCart(accessory.id)}>Agregar al carrito</button>
                         <button className="add-to-cart-btn" onClick={() => handleClick(accessory.id)}>Ver detalles</button>
-                    </div>
                     </div>
                 ))}
             </div>
         </div>
-
-        
-        
     );
 }
