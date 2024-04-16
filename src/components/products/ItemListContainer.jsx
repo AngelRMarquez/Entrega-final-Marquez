@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getAccessories } from "../../asyncMock";
+import { getAccesorios, getAccessoriesByCategory } from '../../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
+
 
 export default function ItemListContainer() {
     const { catName } = useParams();
@@ -11,11 +12,15 @@ export default function ItemListContainer() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const allAccessories = await getAccessories;
-                const accessoriesInCategory = allAccessories.filter(accessory => accessory.categoria === catName);
-                setAccessories(accessoriesInCategory);
+                let data;
+                if (catName) {
+                    data = await getAccessoriesByCategory(catName);
+                } else {
+                    data = await getAccesorios();
+                }
+                setAccessories(data);
             } catch (error) {
-                console.error('Error al obtener los accesorios:', error);
+                console.error("Error fetching data:", error);
             }
         };
 
@@ -38,6 +43,9 @@ export default function ItemListContainer() {
                         <button className="add-to-cart-btn" onClick={() => handleClick(accessory.id)}>Ver detalles</button>
                     </div>
                 ))}
+            </div>
+            <div class="spinner-border" role="status">
+                <span class="sr-only"></span>
             </div>
         </div>
     );

@@ -1,39 +1,49 @@
-import React from 'react';
+//este archivo seria itemDetailContainer
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { getAccessorie } from '../../asyncMock';
-import ItemCounter from './ItemCounter';
+import { getAccessorie } from '../../firebase/firebase';
+import { CartContext } from '../context/CartContext';
+import ItemDetail from '../ItemDetail/ItemDetail';
 
 export default function SingleAccessories() {
     const { accesId } = useParams();
-    const [accessory, setAccessory] = useState({});
+    const [accessory, setAccessory] = useState(null);
+    const { cartList } = useContext(CartContext);
 
     useEffect(() => {
-        const fetchAccessory = async () => {
+        let ignore = false;
+
+        const fetchData = async () => {
             try {
-                const accessoryData = await getAccessorie(accesId);
-                setAccessory(accessoryData);
-            } catch (error) {
-                console.error('Error fetching accessory:', error);
+                const res = await getAccessorie(accesId);
+                if (!ignore) {
+                    const carritoNuevo = [...cartList];
+                    const carritoDeCompra = carritoNuevo.find((acces) => acces.id === res.id);
+                    if (carritoDeCompra) {
+                        setAccessory({ ...res, stock: carritoDeCompra.stock - carritoDeCompra.quantity });
+                    } else {
+                        setAccessory(res);
+                    }
+                }
+            } catch (err) {
+                console.error(err);
             }
         };
 
-        fetchAccessory();
-    }, [accesId]);
+        fetchData();
 
-    const handleAddToCart = (quantity) => {
-        console.log(`Agregando ${quantity} del accesorio ${accessory.nombre} al carrito`);
-    };
+        return () => {
+            ignore = true;
+        };
+    }, [accesId, cartList]);
 
     return (
-        <div className="single-accessory-container">
-            <h1>Accesorio {accesId}</h1>
-            <h3 className="single-accessory-details">Nombre: {accessory.nombre}</h3>
-            <img src={accessory.imagen} alt={accessory.nombre} className="single-accessory-image" />
-            <p className="single-accessory-description">Descripcion: {accessory.descripcion}</p>
-            <p className="single-accessory-category">Categoría: {accessory.categoria}</p>
-            <p className="single-accessory-price">Precio: ${accessory.precio}</p>
-            <ItemCounter stock={5} initial={0} onAdd={handleAddToCart} />
-        </div>
+        <>
+            {accessory && (
+                <div className='it-acces'>
+                    <ItemDetail accessory={accessory} />
+                </div>
+            )}
+        </>
     );
 }

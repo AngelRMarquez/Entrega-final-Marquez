@@ -1,16 +1,23 @@
 import React, { useContext } from 'react';
-import { FaShoppingCart } from 'react-icons/fa';
+import { BsCart4 } from "react-icons/bs";
 import { CartContext } from './context/CartContext';
+import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
-    const { cartList } = useContext(CartContext);
-    const itemCount = cartList.reduce((acc, item) => acc + item.quantity, 0);
+    const {cantidadCarrito } = useContext(CartContext);
+    
 
     return (
-        <div className="cart-widget">
-            <FaShoppingCart className="cart-icon" />
-            <span className="badge badge-pill badge-danger">{itemCount}</span>
-        </div>
+      <>
+      <button>{" "} <Link to={"./cart"}>
+        {" "}
+        <BsCart4  className="cart-icon" />
+      </Link>
+        </button> 
+        <p className='cart-icon-cont'>{cantidadCarrito}</p>
+     
+      </>
+
     );
 };
 
