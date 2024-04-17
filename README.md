@@ -1,14 +1,14 @@
 # Hi 👋, I'm ANGEL MARQUEZ y este es mi proyecto.TECHMAC
 
-Es un Ecommerce de accesorios para iphone, resarrolado como parte de el proyecto final del curso de react, se utilizo React. La tienda permite a los usuarios explorar , navegar y comprar una variedad de accesorios para iPhone, incluyendo fundas, auriculares y cargadores.
+Es un Ecommerce de accesorios para iphone, resarrollado como parte de el proyecto final del curso de react, se utilizo React. La tienda permite a los usuarios explorar , navegar y comprar una variedad de accesorios para iPhone, incluyendo fundas, auriculares y cargadores.
 
 
 ## Para iniciar la APP
--1. Clonar el Repositorio.
--2. Instalar Dependencias.
--3. Configurar Variables de Entorno (si es necesario).
--4. Iniciar la Aplicación.
--5. Interactuar con la Aplicación
+- 1. Clonar el Repositorio.
+- 2. Instalar Dependencias.
+- 3. Configurar Variables de Entorno (si es necesario).
+- 4. Iniciar la Aplicación.
+- 5. Interactuar con la Aplicación
 
 ## Características Principales
 
