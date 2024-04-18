@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function ItemCounter({ stock, onAdd, disabled }) {
     const [counter, setCounter] = useState(1);
